@@ -1,0 +1,22 @@
+---
+title: "Where is the Best Bakery in the World"
+author: "Triston Cossette"
+date: "5/17/2017"
+output: html_document
+---
+
+The chart below contains the location of perhaps one of the best bakeries known to mankind.  Where is it and what is it called?  You'll have to click to find out!
+
+
+```{r echo=FALSE}
+library(leaflet)
+cupcake<-makeIcon(iconUrl = "http://www.endlessicons.com/wp-content/uploads/2012/09/cupcake-icon-614x460.png",
+    iconHeight = 62, iconWidth = 62,
+    iconAnchorX = 16, iconAnchorY = 16)
+
+BestBakeryEverMap<-leaflet() %>% addTiles() %>%
+    addMarkers(lat=37.7636923,lng=-122.4219579, popup="<a href='http://www.tartinebakery.com/'>Best Bakery Ever!</a",
+               icon=cupcake )
+BestBakeryEverMap
+```
+
